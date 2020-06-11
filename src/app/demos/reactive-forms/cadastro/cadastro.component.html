@@ -8,25 +8,12 @@
       <div class="form-group">
         <label for="nome" class="col-md-2 control-label">Nome Completo</label>
         <div class="col-md-10">
-          <input
-            type="text"
-            class="form-control"
-            id="nome"
-            placeholder="Nome (requerido)" formControlName="nome"
-            [ngClass]="{'is-invalid': cadastroForm.get('nome').errors && (cadastroForm.get('nome').dirty || cadastroForm.get('nome').touched ) }"
+          <input type="text" class="form-control" id="nome" placeholder="Nome (requerido)"  formControlName="nome" 
+          [ngClass]="{'is-invalid' : displayMessage.nome}"
           />
-          <span class="text-danger"
-          *ngIf="cadastroForm.get('nome').errors && (cadastroForm.get('nome').dirty || cadastroForm.get('nome').touched )">
-            <p>Preencha o campo nome</p>
+          <span class="text-danger" *ngIf="displayMessage.nome" >
+            <p [innerHTML]="displayMessage.nome"></p>
           </span>
-          <!-- <span class="text-danger"
-          *ngIf="cadastroForm.get('nome')?.errors?.minLength && (cadastroForm.get('nome').dirty || cadastroForm.get('nome').touched )">
-            <p>Tamanho MIN</p>
-          </span>
-          <span class="text-danger"
-          *ngIf="cadastroForm.get('nome')?.errors?.maxLength && (cadastroForm.get('nome').dirty || cadastroForm.get('nome').touched )">
-            <p>Tamanho MAX</p>
-          </span> -->
         </div>
         
       </div>
@@ -41,16 +28,12 @@
             id="cpf"
             placeholder="CPF (requerido)"
             formControlName="cpf"
+            [ngClass]="{'is-invalid' : displayMessage.cpf}"
             cpf [textMask]="{mask: MASKS.cpf.textMask}"
           />
 
-          <span class="text-danger"
-          *ngIf="cadastroForm.get('cpf')?.errors?.required && (cadastroForm.get('cpf').dirty || cadastroForm.get('cpf').touched )">
-            <p>Preencha o CPF</p>
-          </span>
-          <span class="text-danger"
-          *ngIf="cadastroForm.get('cpf')?.errors?.cpf && (cadastroForm.get('cpf').dirty || cadastroForm.get('cpf').touched )">
-            <p>CPF inválido</p>
+          <span class="text-danger" *ngIf="displayMessage.cpf" >
+            <p [innerHTML]="displayMessage.cpf"></p>
           </span>
 
 
@@ -69,21 +52,12 @@
             id="email"
             placeholder="email (requerido)"
             formControlName="email"
-
-            [ngClass]="{'is-invalid': cadastroForm.get('email').errors && (cadastroForm.get('email').dirty || cadastroForm.get('email').touched ) }"
-
+            [ngClass]="{'is-invalid' : displayMessage.email}"
           />
-
-          <span class="text-danger"
-          *ngIf="cadastroForm.get('email')?.errors?.required && (cadastroForm.get('email').dirty || cadastroForm.get('email').touched )">
-            <p>Preencha o campo email</p>
+          <span class="text-danger" *ngIf="displayMessage.email" >
+            <p [innerHTML]="displayMessage.email"></p>
           </span>
-
-
-          <span class="text-danger"
-          *ngIf="cadastroForm.get('email')?.errors?.email && (cadastroForm.get('email').dirty || cadastroForm.get('email').touched )">
-            <p>Email inválido</p>
-          </span>
+          
         </div>
       </div>
 
@@ -98,16 +72,12 @@
             id="senha"
             placeholder="senha (requerido)"
             formControlName="senha"
+            [ngClass]="{'is-invalid' : displayMessage.senha}"            
           />
+          <span class="text-danger" *ngIf="displayMessage.senha" >
+            <p [innerHTML]="displayMessage.senha"></p>
+          </span>
 
-          <span class="text-danger"
-          *ngIf="cadastroForm.get('senha')?.errors?.required && (cadastroForm.get('senha').dirty || cadastroForm.get('senha').touched )">
-            <p>Preencha a senha</p>
-          </span>
-          <span class="text-danger"
-          *ngIf="cadastroForm.get('senha')?.errors?.rangeLength && (cadastroForm.get('senha').dirty || cadastroForm.get('senha').touched )">
-            <p>Senha inválida (6 a 15 caracteres)</p>
-          </span>
         </div>
       </div>
 
@@ -122,7 +92,13 @@
             id="senhaConfirmacao"
             placeholder="senhaConfirmacao (requerido)"
             formControlName="senhaConfirmacao"
+            [ngClass]="{'is-invalid' : displayMessage.senhaConfirmacao}"
           />
+
+          <span class="text-danger" *ngIf="displayMessage.senhaConfirmacao" >
+            <p [innerHTML]="displayMessage.senhaConfirmacao"></p>
+          </span>
+
         </div>
       </div>
 
