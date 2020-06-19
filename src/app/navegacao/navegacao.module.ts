@@ -1,11 +1,10 @@
-import  { NgModule } from "@angular/core"
+import { NgModule } from "@angular/core";
 import { CommonModule } from '@angular/common';
-import { RouterModule } from '@angular/router'
+import { RouterModule } from '@angular/router';
 
 import { MenuComponent } from './menu/menu.component';
 import { HomeComponent } from './home/home.component';
 import { FooterComponent } from './footer/footer.component';
-
 
 @NgModule({
     declarations: [
@@ -13,8 +12,8 @@ import { FooterComponent } from './footer/footer.component';
         HomeComponent,
         FooterComponent
     ],
-    imports: [ 
-        CommonModule, 
+    imports: [
+        CommonModule,
         RouterModule
     ],
     exports: [
@@ -22,7 +21,5 @@ import { FooterComponent } from './footer/footer.component';
         HomeComponent,
         FooterComponent
     ]
-
 })
-
 export class NavegacaoModule{}
