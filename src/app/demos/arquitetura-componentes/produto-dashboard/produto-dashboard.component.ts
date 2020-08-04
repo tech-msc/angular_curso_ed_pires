@@ -10,20 +10,11 @@ export class ProdutoDashboardComponent implements OnInit {
 
   produtos: Produto[]
 
+  chegada: any;
+
   constructor() { }
 
   ngOnInit() {
-
-    // let  p: Produto = {
-    //   id: 1123,
-    //   nome: 'Teste',
-    //   ativo: true,
-    //   valor: 100,
-    //   imagem: 'celular.jpg'
-    // }
-
-    // debugger
-
     this.produtos = [{
       id: 1,
       nome: 'Teste',
@@ -66,6 +57,12 @@ export class ProdutoDashboardComponent implements OnInit {
       valor: 600,
       imagem: 'headset.jpg'
     }];
+  }
+
+  chegouDadosDoFilho(event: Produto){
+    console.log(event);    
+    event.ativo = !event.ativo    
+    
   }
 
 }
