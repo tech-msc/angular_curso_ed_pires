@@ -41,6 +41,14 @@
             <span [ngClass]="produto.ativo ? 'fa fa-toggle-on' : 'fa fa-toggle-off'"> Status</span>
           
           </a>
+
+
+          <a [routerLink]="['editar/', produto.id]"
+          class="btn btn-primary"
+          >Editar</a>
+
+
+
         </div>
       </div>
     </div>
