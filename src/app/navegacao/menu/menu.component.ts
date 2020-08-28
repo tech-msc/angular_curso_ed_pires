@@ -34,12 +34,12 @@ export class MenuComponent {
       exact: false,
       admin: false
     },
-    {
-      link: '/admin',
-      name: 'Admin',
-      exact: false,
-      admin: false
-    }
+    // {
+    //   link: '/admin',
+    //   name: 'Admin',
+    //   exact: false,
+    //   admin: false
+    // }
   ];
 
 }
