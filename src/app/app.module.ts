@@ -14,17 +14,24 @@ import { CadastroComponent } from './demos/reactiveForms/cadastro/cadastro.compo
 import { NavegacaoModule } from './navegacao/navegacao.module';
 
 import { AppRoutingModule } from './app.routes';
+import { AdminDashboardComponent } from './admin/admin-dashboard/admin-dashboard.component';
+import { AdminModule } from './admin/admin.module';
+import { AuthGuard } from './services/app.guard';
+
+
 
 
 @NgModule({
   declarations: [
     AppComponent,
     SobreComponent,
-    CadastroComponent
+    CadastroComponent,
+
   ],
   imports: [
     BrowserModule,
     FormsModule,
+    AdminModule,
     ReactiveFormsModule,
     NavegacaoModule,
     TextMask.TextMaskModule,
@@ -33,7 +40,8 @@ import { AppRoutingModule } from './app.routes';
     AppRoutingModule
   ],
   providers: [
-    { provide: APP_BASE_HREF, useValue: '/' }
+    // { provide: APP_BASE_HREF, useValue: '/' }
+    AuthGuard
   ],
   bootstrap: [AppComponent]
 })
